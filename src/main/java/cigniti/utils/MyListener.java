@@ -9,12 +9,12 @@ public class MyListener implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext context) {
-			System.out.println("\n*************** Suite " + context.getSuite().getName() + " Started ***************\n");
+			System.out.println("\n*************** " + context.getSuite().getName() + " Started ***************\n");
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
-		System.out.println("\n*************** Suite " + context.getSuite().getName() + " Finished ***************\n");
+		System.out.println("\n*************** " + context.getSuite().getName() + " Finished ***************\n");
 	}
 
 	@Override
