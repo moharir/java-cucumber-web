@@ -22,7 +22,7 @@ public class ReportGeneration {
 		}
 
 		String buildNumber = "01";
-		String projectName = "Nirwana";
+		String projectName = "Web Automation";
 
 		Configuration configuration = new Configuration(reportOutputDirectory, projectName);
 		configuration.addPresentationModes(PresentationMode.RUN_WITH_JENKINS);
