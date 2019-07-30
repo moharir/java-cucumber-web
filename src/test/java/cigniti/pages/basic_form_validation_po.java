@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import cigniti.runner.WebRunner;
 
-public class WebSampleDemoPage extends WebRunner {
+public class basic_form_validation_po extends WebRunner {
 	private WebElement element;
 
 	public WebElement getMessageInputField() {
