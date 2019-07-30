@@ -1,10 +1,11 @@
 package cigniti.runner;
 
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterSuite;
@@ -41,14 +42,26 @@ public class WebRunner extends AbstractTestNGCucumberTests {
 		String browserName = properties.getProperty("browserName");
 		String webPlatform = properties.getProperty("webPlatform");
 		String runOn = properties.getProperty("webRunAs");
-	
+
 		capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName(browserName);
 		capabilities.setCapability("platform", webPlatform);
 
 		if (runOn.trim().equalsIgnoreCase("Local")) {
-			WebDriverManager.chromedriver().setup();
-			webDriver = new ChromeDriver();
+			switch (browserName.toLowerCase()) {
+			case "chrome":
+				WebDriverManager.chromedriver().setup();
+				webDriver = new ChromeDriver();
+				break;
+			case "firefox":
+				WebDriverManager.firefoxdriver().setup();
+				webDriver = new FirefoxDriver();
+				break;
+			case "ie":
+				WebDriverManager.iedriver().setup();
+				webDriver = new InternetExplorerDriver();
+				break;
+			}
 			webDriver.manage().window().maximize();
 		} else {
 			try {

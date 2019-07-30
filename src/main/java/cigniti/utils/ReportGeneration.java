@@ -33,6 +33,7 @@ public class ReportGeneration {
 		configuration.addClassifications("Branch", "Demo/1.0");
 
 		ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, configuration);
+		
 		Reportable result = reportBuilder.generateReports();
 	}
 }

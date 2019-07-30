@@ -13,7 +13,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class WebSampleDemo {
+public class basic_form_validation_steps {
 	WebSampleDemoPage webSamplePage = new WebSampleDemoPage();
 
 	@Given("^user is already on the Demo Form$")
